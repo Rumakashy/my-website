@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container-fluid">
+
+        <!-- Banner -->
+        <div class="row banner d-none d-sm-block">
+            <div class="col">
+                <div class="row justify-content-center home-background">
+                        <div class="align-self-center profile-img"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row home-background d-block d-sm-none">
+            <div class="profile-img"></div>
+        </div>
+        <!-- End Banner -->
+
+        <!-- Navbar -->
+        <div class="row text-center navbar-home sticky-top">
+            <div class="col-3 align-self-center">
+                <a href="#">Projects</a>
+            </div>
+            <div class="col-3 align-self-center">
+                <a href="#">Topicality</a>
+            </div>
+            <div class="col-3 align-self-center">
+                <a href="#">CV</a>
+            </div>
+            <div class="col-3 align-self-center">
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+
+        <!-- End Navbar -->
+
+        <!-- Description -->
+        <div class="row text-center justify-content-center description">
+            <div class="col col-md-6 align-self-center">
+                <h2>Description</h2>
+                {% for identity in identities %}
+                    <p>
+                        {{ identity.description }}
+                    </p>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- End Description -->
+
+        <!-- Footer -->
+            <div class="row footer-home">
+                <div class="col-8">
+                    <h2 id="contact">Contact</h2>
+                </div>
+                <div class="col-4 align-self-center">
+                    <div class="row justify-content-center">
+                        <div class="col-2 social-networks">
+                            <a href="#">
+                                <span class="fa fa-facebook-square" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                        <div class="col-2 social-networks">
+                            <a href="#">
+                                <span class="fa fa-linkedin-square" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-2 social-networks">
+                            <a href="#">
+                                <span class="fa fa-github-square" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                        <div class="col-2 social-networks">
+                            <a href="#">
+                                <span class="fa fa-twitter-square" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- End Footer -->
+    </div>
+{% endblock %}

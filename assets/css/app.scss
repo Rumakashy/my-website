@@ -1,0 +1,85 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/components-font-awesome/scss/font-awesome";
+
+/* Banner */
+
+.banner {
+  .home-background {
+    height: 40vw;
+    border: solid black 1px;
+    background-image: url("http://www.les-therapies-energetiques.com/images/Image/Image/foret.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+.profile-img {
+  height: 20vw;
+  width: 20vw;
+  border: solid black 1px;
+  border-radius: 50%;
+  background-image: url("https://pbs.twimg.com/profile_images/739442699888144384/wu7I9fbm_400x400.jpg");
+  background-position: center;
+  background-size: cover;
+  @media screen and (max-width: 575px) {
+    margin-left: 40%;
+  }
+}
+
+/* End Banner */
+
+/* Navbar */
+
+.navbar-home {
+  height: calc(5.65vw + 10px);
+  border: solid black 1px;
+
+  div a {
+    text-decoration: none;
+    color: black;
+    font-size: calc(1.5vw + 10px);
+  }
+  div a:hover {
+   font-weight: bold;
+  }
+}
+
+/* End Navbar */
+
+/* Description */
+
+.description {
+  padding: 5vw;
+
+  h2 {
+    font-size: calc(1vw + 10px);
+    margin-bottom: 3vw;
+  }
+  p {
+    font-size: calc(0.5vw + 10px);
+  }
+}
+
+/* End Description */
+
+/* Footer */
+
+.footer-home {
+  padding: 5vw;
+  border: solid black 1px;
+
+  .social-networks {
+    border: solid black 1px;
+    margin: 1vw;
+
+    a .fa {
+      font-size: calc(5vw + 10px);
+      color: grey;
+    }
+    a .fa:hover {
+      color: black;
+    }
+  }
+}
+
+/* End Footer */
