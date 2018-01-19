@@ -8,7 +8,7 @@ easy_admin:
                     - 'id'
                     - { property: 'description', label: 'Ma Description' }
                     - { property: 'backgroundimg', type: 'image', base_path: '%app.path.identity_images%', label: 'Image Bannière' }
-                    - { property: 'profileimg', label: 'Image Profil' }
+                    - { property: 'profileimg', type: 'image', base_path: '%app.path.identity_images%', label: 'Image Profil' }
             new:
                 fields:
                     - { property: 'description', label: 'Ma Description' }
@@ -21,7 +21,7 @@ easy_admin:
                     - { property: 'description', label: 'Ma Description' }
                     - { type: 'divider' }
                     - { property: 'backgroundimgFile', type: 'file', label: 'Image Bannière' }
-                    - { property: 'profileimg', label: 'Image Profil' }
+                    - { property: 'profileimgFile', type: 'file', label: 'Image Profil' }
                     - { type: 'divider' }
 
         Project:

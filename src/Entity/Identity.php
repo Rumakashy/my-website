@@ -8,6 +8,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\IndentityRepository")
+ * @Vich\Uploadable
  */
 class Identity
 {
@@ -24,7 +25,7 @@ class Identity
     private $description;
 
     /**
-     * @Vich\UploadableField(mapping="identity_images", fileNameProperty="image")
+     * @Vich\UploadableField(mapping="identity", fileNameProperty="backgroundimg")
      * @var File
      */
     private $backgroundimgFile;
@@ -33,6 +34,12 @@ class Identity
      * @ORM\Column(type="string")
      */
     private $backgroundimg;
+
+    /**
+     * @Vich\UploadableField(mapping="identity", fileNameProperty="profileimg")
+     * @var File
+     */
+    private $profileimgFile;
 
     /**
      * @ORM\Column(type="string")
@@ -97,6 +104,23 @@ class Identity
     public function getBackgroundimgFile()
     {
         return $this->backgroundimgFile;
+    }
+
+    public function setProfileimgFile(File $profileimg = null)
+    {
+        $this->profileimgFile = $profileimg;
+
+        if($profileimg) {
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProfileimgFile()
+    {
+        return $this->profileimgFile;
     }
 
     /**
