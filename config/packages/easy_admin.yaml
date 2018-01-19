@@ -1,0 +1,41 @@
+easy_admin:
+    entities:
+        # List the entity class name you want to manage
+        Identity:
+            class: App\Entity\Identity
+            list:
+                fields:
+                    - 'id'
+                    - { property: 'description', label: 'Ma Description' }
+                    - { property: 'backgroundimg', type: 'image', base_path: '%app.path.identity_images%', label: 'Image Bannière' }
+                    - { property: 'profileimg', label: 'Image Profil' }
+            new:
+                fields:
+                    - { property: 'description', label: 'Ma Description' }
+                    - { type: 'divider' }
+                    - { property: 'backgroundimg', label: 'Image Bannière' }
+                    - { property: 'profileimg', label: 'Image Profil' }
+                    - { type: 'divider' }
+            edit:
+                fields:
+                    - { property: 'description', label: 'Ma Description' }
+                    - { type: 'divider' }
+                    - { property: 'backgroundimgFile', type: 'file', label: 'Image Bannière' }
+                    - { property: 'profileimg', label: 'Image Profil' }
+                    - { type: 'divider' }
+
+        Project:
+            class: App\Entity\Project
+
+        Topicality:
+            class: App\Entity\Topicality
+
+    design:
+        form_theme: 'vertical'
+        menu:
+            - { entity: 'Identity', label: 'Page Accueil' }
+            - { entity: 'Project', label: 'Page Projets' }
+            - { entity: 'Topicality', label: 'Page Actualités' }
+        brand_color: '#3366ff'
+
+    site_name: 'Mon Admin'

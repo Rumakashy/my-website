@@ -59,6 +59,15 @@
     "doctrine/orm": {
         "version": "v2.5.14"
     },
+    "javiereguiluz/easyadmin-bundle": {
+        "version": "1.17",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.17",
+            "ref": "66070ea553247b0cd5275e21d0fe5399a25f40be"
+        }
+    },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
@@ -70,6 +79,9 @@
     },
     "ocramius/proxy-manager": {
         "version": "2.0.4"
+    },
+    "pagerfanta/pagerfanta": {
+        "version": "v1.0.5"
     },
     "psr/cache": {
         "version": "1.0.1"
@@ -194,6 +206,9 @@
     "symfony/polyfill-mbstring": {
         "version": "v1.6.0"
     },
+    "symfony/polyfill-util": {
+        "version": "v1.6.0"
+    },
     "symfony/profiler-pack": {
         "version": "v1.0.3"
     },
@@ -207,6 +222,18 @@
             "branch": "master",
             "version": "3.3",
             "ref": "a249484db698d1a847a30291c8f732414ac47e25"
+        }
+    },
+    "symfony/security": {
+        "version": "v3.4.3"
+    },
+    "symfony/security-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "34eb245ce4194e7ae713558084180e2c532e7afd"
         }
     },
     "symfony/stopwatch": {
@@ -265,6 +292,15 @@
     },
     "twbs/bootstrap": {
         "version": "v3.3.7"
+    },
+    "twig/extensions": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "4851df0afc426b8f07204379d21fca25b6df5d68"
+        }
     },
     "twig/twig": {
         "version": "v2.4.4"

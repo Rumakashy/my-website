@@ -3,8 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\IndentityRepository")
@@ -24,10 +24,8 @@ class Identity
     private $description;
 
     /**
-     * @Vich\UploadableField(mapping="images", fileNameProperty="backgroundimg")
-     *
+     * @Vich\UploadableField(mapping="identity_images", fileNameProperty="image")
      * @var File
-     *
      */
     private $backgroundimgFile;
 
@@ -37,17 +35,15 @@ class Identity
     private $backgroundimg;
 
     /**
-     * @Vich\UploadableField(mapping="images", fileNameProperty="profileimg")
-     *
-     * @var File
-     *
-     */
-    private $profileimgFile;
-
-    /**
      * @ORM\Column(type="string")
      */
     private $profileimg;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @var \DateTime
+     */
+    private $updatedAt;
 
     /**
      * @return mixed
@@ -85,6 +81,24 @@ class Identity
         return $this;
     }
 
+
+    public function setBackgroundimgFile(File $backgroundimg = null)
+    {
+        $this->backgroundimgFile = $backgroundimg;
+
+        if($backgroundimg) {
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBackgroundimgFile()
+    {
+        return $this->backgroundimgFile;
+    }
+
     /**
      * @return mixed
      */
@@ -119,61 +133,5 @@ class Identity
     {
         $this->profileimg = $profileimg;
         return $this;
-    }
-
-    /**
-     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $backgroundimg
-     *
-     * @return Identity
-     */
-    public function setBackgroundimgFile(File $backgroundimg = null)
-    {
-        $this->backgroundimgFile = $backgroundimg;
-
-        // VERY IMPORTANT:
-        // It is required that at least one field changes if you are using Doctrine,
-        // otherwise the event listeners won't be called and the file is lost
-        if ($backgroundimg) {
-            // if 'updatedAt' is not defined in your entity, use another property
-            $this->updatedAt = new \DateTime('now');
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return File|null
-     */
-    public function getBackgroundimgFile()
-    {
-        return $this->backgroundimgFile;
-    }
-
-    /**
-     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $backgroundimg
-     *
-     * @return Identity
-     */
-    public function setProfileimgFile(File $profileimg = null)
-    {
-        $this->profileimgFile = $profileimg;
-
-        // VERY IMPORTANT:
-        // It is required that at least one field changes if you are using Doctrine,
-        // otherwise the event listeners won't be called and the file is lost
-        if ($profileimg) {
-            // if 'updatedAt' is not defined in your entity, use another property
-            $this->updatedAt = new \DateTime('now');
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return File|null
-     */
-    public function getProfileimgFile()
-    {
-        return $this->profileimgFile;
     }
 }
