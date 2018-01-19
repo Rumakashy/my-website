@@ -39,11 +39,9 @@
         <div class="row text-center justify-content-center description">
             <div class="col col-md-6 align-self-center">
                 <h2>Description</h2>
-                {% for identity in identities %}
                     <p>
-                        {{ identity.description }}
+                        {{ identities[0].description }}
                     </p>
-                {% endfor %}
             </div>
         </div>
         <!-- End Description -->
