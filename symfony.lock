@@ -59,6 +59,9 @@
     "doctrine/orm": {
         "version": "v2.5.14"
     },
+    "friendsofsymfony/user-bundle": {
+        "version": "v2.0.2"
+    },
     "javiereguiluz/easyadmin-bundle": {
         "version": "1.17",
         "recipe": {
@@ -82,6 +85,9 @@
     },
     "pagerfanta/pagerfanta": {
         "version": "v1.0.5"
+    },
+    "paragonie/random_compat": {
+        "version": "v2.0.11"
     },
     "psr/cache": {
         "version": "1.0.1"

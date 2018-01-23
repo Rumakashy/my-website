@@ -4,6 +4,7 @@
     "require": {
         "php": "^7.0.8",
         "ext-iconv": "*",
+        "friendsofsymfony/user-bundle": "~2.0",
         "javiereguiluz/easyadmin-bundle": "^1.17",
         "sensio/framework-extra-bundle": "^5.1",
         "symfony/asset": "^3.4",
@@ -15,6 +16,7 @@
         "symfony/maker-bundle": "^1.0",
         "symfony/orm-pack": "^1.0",
         "symfony/profiler-pack": "^1.0",
+        "symfony/security-bundle": "^3.4",
         "symfony/twig-bundle": "^3.4",
         "symfony/validator": "^3.4",
         "symfony/web-server-bundle": "^3.4",

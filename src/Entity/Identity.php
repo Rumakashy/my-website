@@ -82,7 +82,7 @@ class Identity
      * @param mixed $description
      * @return Identity
      */
-    public function setDesciption($description)
+    public function setDescription($description)
     {
         $this->description = $description;
         return $this;
