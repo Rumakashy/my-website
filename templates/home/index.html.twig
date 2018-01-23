@@ -6,14 +6,14 @@
         <!-- Banner -->
         <div class="row banner d-none d-sm-block">
             <div class="col">
-                <div class="row justify-content-center home-background"">
-                        <div class="align-self-center profile-img"></div>
+                <div class="row justify-content-center home-background" style="background-image: url('{{ asset('uploads/images/identity/' ~ identities[0].backgroundimg) }}')">
+                        <div class="align-self-center profile-img" style="background-image: url('{{ asset('uploads/images/identity/' ~ identities[0].profileimg) }}')"></div>
                 </div>
             </div>
         </div>
 
         <div class="row home-background d-block d-sm-none">
-            <div class="profile-img"></div>
+            <div class="profile-img" style="background-image: url('{{ asset('uploads/images/identity/' ~ identities[0].profileimg) }}')"></div>
         </div>
         <!-- End Banner -->
 
@@ -39,9 +39,9 @@
         <div class="row text-center justify-content-center description">
             <div class="col col-md-6 align-self-center">
                 <h2>Description</h2>
-                    <p>
-                        {{ identities[0].description }}
-                    </p>
+                <p>
+                    {{ identities[0].description }}
+                </p>
             </div>
         </div>
         <!-- End Description -->
