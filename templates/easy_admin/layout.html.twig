@@ -14,6 +14,20 @@
         <style>
             {{ easyadmin_config('_internal.custom_css')|raw }}
         </style>
+        <style>
+            .btn-back-website {
+                background-color: rgba(255, 255, 255, 0.1);
+                color: white;
+                text-decoration: none;
+                border-radius: 0;
+            }
+            .btn-back-website:hover, .btn-back-website:active, .btn-back-website:focus, .btn-back-website:active:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+                color: white;
+                border-radius: 0;
+                text-decoration: none;
+            }
+        </style>
     {% endblock %}
 
     {% for css_asset in easyadmin_config('design.assets.css') %}
@@ -72,6 +86,11 @@
                             {% block header_custom_menu %}
                                 {% set _logout_path = easyadmin_logout_path() %}
                                 <ul class="nav navbar-nav">
+                                    <a href="{{ path('index') }}">
+                                        <button class="btn btn-secondary btn-back-website">
+                                            <i class="hidden-xs fa fa-arrow-left"></i> Retour sur le Site
+                                        </button>
+                                    </a>
                                     <li class="dropdown user user-menu">
                                         {% block user_menu %}
                                             <span class="sr-only">{{ 'user.logged_in_as'|trans(domain = 'EasyAdminBundle') }}</span>
