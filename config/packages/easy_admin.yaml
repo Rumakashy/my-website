@@ -37,5 +37,7 @@ easy_admin:
             - { entity: 'Project', label: 'Page Projets' }
             - { entity: 'Topicality', label: 'Page Actualités' }
         brand_color: '#3366ff'
+        templates:
+            edit: '@App/Backend/layout.html.twig'
 
     site_name: 'Mon Admin'
