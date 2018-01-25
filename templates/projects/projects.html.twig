@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container-fluid">
+
+        <!-- Navbar -->
+        <div class="row text-center navbar-home sticky-top">
+            <div class="col-3 align-self-center">
+                <a href="#">Projects</a>
+            </div>
+            <div class="col-3 align-self-center">
+                <a href="#">Topicality</a>
+            </div>
+            <div class="col-3 align-self-center">
+                <a href="#">CV</a>
+            </div>
+            <div class="col-3 align-self-center">
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        <!-- End Navbar -->
+
+        <!-- Project -->
+        {% for project in projects %}
+            <div class="row">
+                <div class="project col">
+                    {{ project.projecttitle }}
+                    {{ project.projectdescription }}
+                    {{ project.projectimg }}
+                </div>
+            </div>
+        {% endfor %}
+        <!-- End Project -->
+
+    </div>
+{% endblock %}
