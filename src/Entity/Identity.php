@@ -88,7 +88,10 @@ class Identity
         return $this;
     }
 
-
+    /**
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $backgroundimg
+     * @return Identity
+     */
     public function setBackgroundimgFile(File $backgroundimg = null)
     {
         $this->backgroundimgFile = $backgroundimg;
@@ -106,6 +109,10 @@ class Identity
         return $this->backgroundimgFile;
     }
 
+    /**
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $profileimg
+     * @return Identity
+     */
     public function setProfileimgFile(File $profileimg = null)
     {
         $this->profileimgFile = $profileimg;
