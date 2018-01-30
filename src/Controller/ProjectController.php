@@ -2,18 +2,23 @@
 
 namespace App\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bridge\Doctrine\RegistryInterface;
+use App\Entity\Project;
+use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 class ProjectController extends Controller
 {
     /**
-     * @Route("/project", name="project")
+     * @Route("/projects", name="project")
      */
-    public function index()
+    public function index(RegistryInterface $doctrine)
     {
-        // replace this line with your own code!
-        return $this->render('@Maker/demoPage.html.twig', [ 'path' => str_replace($this->getParameter('kernel.project_dir').'/', '', __FILE__) ]);
+        $projects = $doctrine->getRepository(Project::class)->findAll();
+        return $this->render('projects/projects.html.twig', array(
+            'projects' => $projects,
+        ));
     }
 }

@@ -1,83 +1,119 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <span id="home"></span>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand js-scrollTo" href="#home">PLASSON VINCENT</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse pull-right-nav" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link js-scrollTo" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scrollTo" href="#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scrollTo" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Actu</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Banner -->
     <div class="container-fluid">
-
-        <!-- Banner -->
-        <div class="row banner d-none d-sm-block">
+        <div class="row banner">
             <div class="col">
-                <div class="row justify-content-center home-background"">
-                        <div class="align-self-center profile-img"></div>
+                <div class="row justify-content-center home-background" style="background-image: url('{{ asset('uploads/images/identity/' ~ identities[0].backgroundimg) }}')">
+                    <div class="align-self-center profile-img" style="background-image: url('{{ asset('uploads/images/identity/' ~ identities[0].profileimg) }}')"></div>
+                    <p>Hi ! Welcome to my Website !</p>
+                    <a href="#about" class="js-scrollTo btn btn-dark btn-lg">Go !</a>
                 </div>
             </div>
         </div>
-
-        <div class="row home-background d-block d-sm-none">
-            <div class="profile-img"></div>
-        </div>
-        <!-- End Banner -->
-
-        <!-- Navbar -->
-        <div class="row text-center navbar-home sticky-top">
-            <div class="col-3 align-self-center">
-                <a href="#">Projects</a>
-            </div>
-            <div class="col-3 align-self-center">
-                <a href="#">Topicality</a>
-            </div>
-            <div class="col-3 align-self-center">
-                <a href="#">CV</a>
-            </div>
-            <div class="col-3 align-self-center">
-                <a href="#contact">Contact</a>
-            </div>
-        </div>
-
-        <!-- End Navbar -->
-
-        <!-- Description -->
-        <div class="row text-center justify-content-center description">
-            <div class="col col-md-6 align-self-center">
-                <h2>Description</h2>
-                    <p>
-                        {{ identities[0].description }}
-                    </p>
-            </div>
-        </div>
-        <!-- End Description -->
-
-        <!-- Footer -->
-            <div class="row footer-home">
-                <div class="col-8">
-                    <h2 id="contact">Contact</h2>
-                </div>
-                <div class="col-4 align-self-center">
-                    <div class="row justify-content-center">
-                        <div class="col-2 social-networks">
-                            <a href="#">
-                                <span class="fa fa-facebook-square" aria-hidden="true"></span>
-                            </a>
-                        </div>
-                        <div class="col-2 social-networks">
-                            <a href="#">
-                                <span class="fa fa-linkedin-square" aria-hidden="true"></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-2 social-networks">
-                            <a href="#">
-                                <span class="fa fa-github-square" aria-hidden="true"></span>
-                            </a>
-                        </div>
-                        <div class="col-2 social-networks">
-                            <a href="#">
-                                <span class="fa fa-twitter-square" aria-hidden="true"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <!-- End Footer -->
     </div>
+    <!-- End Banner -->
+
+    <!-- About -->
+    <div class="container" id="about">
+        <section class="about">
+            <h2 class="text-center">About</h2>
+            <div class="row">
+                <div class="col-md-4 d-none d-md-block">
+                    <a href="http://www.42.fr/" target="_blank"><img src="http://www.reseau-anact.fr/emailer/newsletters/images/logo-42-b3dca485d73382c783773d439a8b5610ac6d52e55dfccbdeb0561e82b6b5bafa.jpg" alt="ecole 42"></a>
+                    <a href="https://wildcodeschool.fr/" target="_blank"><img src="https://www.jds.fr/medias/image/0-42179800-1496335948-64638-600-600-F.jpg" alt="ecole Wild Code School"></a>
+                </div>
+                <div class="col-md-8">
+                    <p>{{ identities[0].description }}</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- End About -->
+
+    <!-- Portfolio -->
+    <div class="container-fluid background-portfolio">
+        <section class="portfolio" id="portfolio">
+            <h2 class="text-center">Portfolio</h2>
+            <div class="row">
+                {% for project in projects %}
+                    <div class="col-md-4 col-sm-6 portfolio-item">
+                        <a class="portfolio-link" href="#">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="{{ asset('uploads/images/project/' ~ project.projectimg) }}" alt="">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>{{ project.projecttitle }}</h4>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+    <!-- End Portfolio -->
+
+    <!-- Contact -->
+    <div class="container">
+        <section class="contact" id="contact">
+            <h2 class="text-center">Contact</h2>
+            <form method="post" action="#contact">
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Nom</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">E-Mail</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Téléphone</label>
+                    <input type="tel" class="form-control" id="exampleFormControlInput1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Message</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+            </form>
+        </section>
+    </div>
+    <!-- End Contact -->
+
+    <!-- Footer -->
+    <div class="container-fluid background-footer">
+        <footer class="text-center">
+            <p>Site créé par Vincent Plasson.</p>
+        </footer>
+    </div>
+    <!-- End Footer -->
 {% endblock %}

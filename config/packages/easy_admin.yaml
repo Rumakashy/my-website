@@ -13,8 +13,8 @@ easy_admin:
                 fields:
                     - { property: 'description', label: 'Ma Description' }
                     - { type: 'divider' }
-                    - { property: 'backgroundimg', label: 'Image Bannière' }
-                    - { property: 'profileimg', label: 'Image Profil' }
+                    - { property: 'backgroundimg', type: 'file', label: 'Image Bannière' }
+                    - { property: 'profileimg', type: 'file', label: 'Image Profil' }
                     - { type: 'divider' }
             edit:
                 fields:
@@ -26,6 +26,26 @@ easy_admin:
 
         Project:
             class: App\Entity\Project
+            list:
+                fields:
+                    - 'id'
+                    - { property: 'projecttitle', label: 'Nom du Projet' }
+                    - { property: 'projectdescription', label: 'Description' }
+                    - { property: 'projectimg', type: 'image', base_path: '%app.path.project_images%', label: 'Image du Projet' }
+            new:
+                fields:
+                    - { property: 'projecttitle', label: 'Nom du Projet' }
+                    - { type: 'divider' }
+                    - { property: 'projectdescription', label: 'Description' }
+                    - { property: 'projectimg', type: 'file', label: 'Image du Projet' }
+                    - { type: 'divider' }
+            edit:
+                fields:
+                    - { property: 'projecttitle', label: 'Nom du Projet' }
+                    - { type: 'divider' }
+                    - { property: 'projectdescription', label: 'Description' }
+                    - { property: 'projectimgFile', type: 'file', label: 'Image du Projet' }
+                    - { type: 'divider' }
 
         Topicality:
             class: App\Entity\Topicality
@@ -37,5 +57,7 @@ easy_admin:
             - { entity: 'Project', label: 'Page Projets' }
             - { entity: 'Topicality', label: 'Page Actualités' }
         brand_color: '#3366ff'
+        templates:
+            edit: '@App/Backend/layout.html.twig'
 
     site_name: 'Mon Admin'

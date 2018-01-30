@@ -3,6 +3,7 @@
 parameters:
     locale: 'fr'
     app.path.identity_images: uploads/images/identity
+    app.path.project_images: uploads/images/project
 
 services:
     # default configuration for services in *this* file
