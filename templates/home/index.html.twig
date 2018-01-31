@@ -4,23 +4,23 @@
     <span id="home"></span>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <a class="navbar-brand js-scrollTo" href="#home">PLASSON VINCENT</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand js-scrollTo" href="#home">Vincent Plasson</a>
+        <button style="border: solid #0e1c37 1px" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse pull-right-nav" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link js-scrollTo" href="#about">About</a>
+                    <a class="nav-link js-scrollTo" href="#about">À PROPOS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scrollTo" href="#portfolio">Portfolio</a>
+                    <a class="nav-link js-scrollTo" href="#portfolio">PORTFOLIO</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scrollTo" href="#contact">Contact</a>
+                    <a class="nav-link js-scrollTo" href="#contact">CONTACT</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Actu</a>
+                    <a class="nav-link" href="#">ACTU</a>
                 </li>
             </ul>
         </div>
@@ -33,8 +33,8 @@
             <div class="col">
                 <div class="row justify-content-center home-background" style="background-image: url('{{ asset('uploads/images/identity/' ~ identities[0].backgroundimg) }}')">
                     <div class="align-self-center profile-img" style="background-image: url('{{ asset('uploads/images/identity/' ~ identities[0].profileimg) }}')"></div>
-                    <p>Hi ! Welcome to my Website !</p>
-                    <a href="#about" class="js-scrollTo btn btn-dark btn-lg">Go !</a>
+                    <p>Developpeur Web</p>
+                    <a href="#about" class="js-scrollTo click-down bounce"><i class="fa fa-chevron-down"></i></a>
                 </div>
             </div>
         </div>
@@ -44,15 +44,17 @@
     <!-- About -->
     <div class="container" id="about">
         <section class="about">
-            <h2 class="text-center">About</h2>
+            <h2 class="text-center">À propos</h2>
             <div class="row">
-                <div class="col-md-4 d-none d-md-block">
-                    <a href="http://www.42.fr/" target="_blank"><img src="http://www.reseau-anact.fr/emailer/newsletters/images/logo-42-b3dca485d73382c783773d439a8b5610ac6d52e55dfccbdeb0561e82b6b5bafa.jpg" alt="ecole 42"></a>
-                    <a href="https://wildcodeschool.fr/" target="_blank"><img src="https://www.jds.fr/medias/image/0-42179800-1496335948-64638-600-600-F.jpg" alt="ecole Wild Code School"></a>
-                </div>
-                <div class="col-md-8">
+                <div class="col-md text-center">
                     <p>{{ identities[0].description }}</p>
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <a href="http://www.42.fr/" class="col-md-3 d-none d-md-block" target="_blank"><img src="https://www.erenumerique.fr/wp-content/uploads/2017/02/e%CC%81cole-42-800x600.jpg" alt="ecole 42"></a>
+                <a href="https://wildcodeschool.fr/" class="col-md-3 d-none d-md-block" target="_blank"><img src="https://www.jds.fr/medias/image/0-42179800-1496335948-64638-600-600-F.jpg" alt="ecole Wild Code School"></a>
+                <div class="col-md-3"></div>
             </div>
         </section>
     </div>

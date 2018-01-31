@@ -56,8 +56,9 @@ easy_admin:
             - { entity: 'Identity', label: 'Page Accueil' }
             - { entity: 'Project', label: 'Page Projets' }
             - { entity: 'Topicality', label: 'Page Actualités' }
-        brand_color: '#3366ff'
+        brand_color: '#0e1c37'
         templates:
             edit: '@App/Backend/layout.html.twig'
+        color_scheme: 'light'
 
-    site_name: 'Mon Admin'
+    site_name: 'Gestion du Site'
